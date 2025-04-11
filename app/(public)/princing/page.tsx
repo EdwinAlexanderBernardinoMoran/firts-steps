@@ -8,7 +8,7 @@ export const metadata = {
 export default function PricingPage() {
     return (
         <>
-        <h1>Pricing Page</h1>
+            <span className="text-7xl">Pricing Page</span>
         </>
     )
 }
