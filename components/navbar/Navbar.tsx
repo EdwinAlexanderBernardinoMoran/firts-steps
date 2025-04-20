@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { HomeIcon } from "@primer/octicons-react";
+import { ActiveLink } from "../active-link/ActiveLink";
+import path from "path";
 
 const navItems = [
-  { name: "About", href: "/about" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Contact", href: "/contact" },
+  { text: "About", path: "/about" },
+  { text: "Pricing", path: "/princing" },
+  { text: "Contact", path: "/contact" },
 ];
 
 const temporalAsync = () => {
@@ -29,7 +31,8 @@ export const Navbar = async () => {
       <div className="flex flex-1"></div>
 
       {navItems.map( navItem => (
-        <Link key={navItem.href} className="mr-3" href={ navItem.href }>{ navItem.name }</Link>
+        // <Link key={navItem.href} className="mr-3" href={ navItem.href }>{ navItem.name }</Link>
+        <ActiveLink key={navItem.path} {...navItem}/>
       ))}
     </nav>
   )
